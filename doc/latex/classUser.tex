@@ -1,0 +1,209 @@
+\hypertarget{classUser}{}\section{User Class Reference}
+\label{classUser}\index{User@{User}}
+
+
+\hyperlink{classUser}{User} class.  
+
+
+
+
+{\ttfamily \#include $<$user.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classUser_a09455487efcb1b5fb6b743a75fccb123}{User} (const char \hyperlink{classUser_a1d1e3a5d1dcc02ae1c36c3311e8c25b4}{login}\mbox{[}\hyperlink{user_8hpp_a43842dcd60d621d7d9c9b9e4ecd76f78}{M\+A\+X\+\_\+\+L\+O\+G\+I\+N\+\_\+\+L\+E\+N}\mbox{]}, uint32\+\_\+t \hyperlink{classUser_aa968324a879499589f584dc6f3c6a6e2}{id}, \hyperlink{user_8hpp_a147824aa4797bb7a9bcf276b5de0cb7c}{role\+\_\+t} \hyperlink{classUser_a9b04781b4e2bcd9f76deed61ba326237}{role})
+\begin{DoxyCompactList}\small\item\em This constructor create a user from a login, id and role. \end{DoxyCompactList}\item 
+\hyperlink{classUser_ac00b72ad64eb4149f7b21b9f5468c2b2}{$\sim$\+User} ()
+\begin{DoxyCompactList}\small\item\em \hyperlink{classUser}{User} destructor. \end{DoxyCompactList}\item 
+\hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0}{myerror\+\_\+t} \hyperlink{classUser_a977bb5f43b08381c40e979ef0681f6d0}{dump} (uint8\+\_\+t $\ast$$\ast$pointer, size\+\_\+t $\ast$size) const 
+\begin{DoxyCompactList}\small\item\em This function serialize the \hyperlink{classUser}{User} class into an array of bytes. \end{DoxyCompactList}\item 
+const char $\ast$ \hyperlink{classUser_adba4ac3eacf305b1dcfa7b82dc95817e}{get\+Login} () const 
+\begin{DoxyCompactList}\small\item\em Function returning the login of the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static \hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0}{myerror\+\_\+t} \hyperlink{classUser_a51db3d6d7dc0bdcc88e1e68acdd43dfd}{parse} (uint8\+\_\+t $\ast$buffer, \hyperlink{classUser}{User} $\ast$$\ast$res)
+\begin{DoxyCompactList}\small\item\em This function parse a buffer to create a \hyperlink{classUser}{User} class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classUser_aa968324a879499589f584dc6f3c6a6e2}{}const uint32\+\_\+t \hyperlink{classUser_aa968324a879499589f584dc6f3c6a6e2}{id}\label{classUser_aa968324a879499589f584dc6f3c6a6e2}
+
+\begin{DoxyCompactList}\small\item\em Id of the user, must be unique. \end{DoxyCompactList}\item 
+\hypertarget{classUser_a9b04781b4e2bcd9f76deed61ba326237}{}const \hyperlink{user_8hpp_a147824aa4797bb7a9bcf276b5de0cb7c}{role\+\_\+t} \hyperlink{classUser_a9b04781b4e2bcd9f76deed61ba326237}{role}\label{classUser_a9b04781b4e2bcd9f76deed61ba326237}
+
+\begin{DoxyCompactList}\small\item\em Role of the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classUser_ab8a359b3a7b3c51013dd461b1120df4d}{}static constexpr size\+\_\+t \hyperlink{classUser_ab8a359b3a7b3c51013dd461b1120df4d}{dump\+Size} = \hyperlink{user_8hpp_a43842dcd60d621d7d9c9b9e4ecd76f78}{M\+A\+X\+\_\+\+L\+O\+G\+I\+N\+\_\+\+L\+E\+N} + 5\label{classUser_ab8a359b3a7b3c51013dd461b1120df4d}
+
+\begin{DoxyCompactList}\small\item\em Size of the class once dumped into a byte array. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+char \hyperlink{classUser_a1d1e3a5d1dcc02ae1c36c3311e8c25b4}{login} \mbox{[}\hyperlink{user_8hpp_a43842dcd60d621d7d9c9b9e4ecd76f78}{M\+A\+X\+\_\+\+L\+O\+G\+I\+N\+\_\+\+L\+E\+N}+1\mbox{]}
+\begin{DoxyCompactList}\small\item\em Login of the user. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 30 of file user.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classUser_a09455487efcb1b5fb6b743a75fccb123}{}\index{User@{User}!User@{User}}
+\index{User@{User}!User@{User}}
+\subsubsection[{User}]{\setlength{\rightskip}{0pt plus 5cm}User\+::\+User (
+\begin{DoxyParamCaption}
+\item[{const char}]{login\mbox{[}\+M\+A\+X\+\_\+\+L\+O\+G\+I\+N\+\_\+\+L\+E\+N\mbox{]}, }
+\item[{uint32\+\_\+t}]{id, }
+\item[{{\bf role\+\_\+t}}]{role}
+\end{DoxyParamCaption}
+)}\label{classUser_a09455487efcb1b5fb6b743a75fccb123}
+
+
+ 
+
+Definition at line 5 of file user.\+cpp.
+
+
+
+References login.
+
+
+
+Referenced by parse().
+
+\hypertarget{classUser_ac00b72ad64eb4149f7b21b9f5468c2b2}{}\index{User@{User}!````~User@{$\sim$\+User}}
+\index{````~User@{$\sim$\+User}!User@{User}}
+\subsubsection[{$\sim$\+User}]{\setlength{\rightskip}{0pt plus 5cm}User\+::$\sim$\+User (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classUser_ac00b72ad64eb4149f7b21b9f5468c2b2}
+
+
+ 
+
+Definition at line 11 of file user.\+cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classUser_a977bb5f43b08381c40e979ef0681f6d0}{}\index{User@{User}!dump@{dump}}
+\index{dump@{dump}!User@{User}}
+\subsubsection[{dump}]{\setlength{\rightskip}{0pt plus 5cm}{\bf myerror\+\_\+t} User\+::dump (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$$\ast$}]{pointer, }
+\item[{size\+\_\+t $\ast$}]{size}
+\end{DoxyParamCaption}
+) const}\label{classUser_a977bb5f43b08381c40e979ef0681f6d0}
+This function is for example used to dump a \hyperlink{classUser}{User} class when saving the \hyperlink{classAPI}{A\+P\+I} in a file. 
+
+ 
+\begin{DoxyParams}{Parameters}
+{\em pointer} & is a pointer to the buffer that will contain the result. $\ast$pointer should be initialised to N\+U\+L\+L since the memory allocation will be done by the function. \\
+\hline
+{\em size} & is a pointer to an integer that which value will be set to the actual size of the allocated buffer. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item \hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0abf350750d0d4fabd8954c0f1e9bbae94}{N\+O\+\_\+\+E\+R\+R\+O\+R} if no error occured 
+\item \hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0a05718b630d7176e8e040eca44907b99f}{E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+A\+M} if pointer is N\+U\+L\+L or $\ast$pointer is not N\+U\+L\+L 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+ 
+
+Definition at line 15 of file user.\+cpp.
+
+
+
+References dump\+Size, E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+A\+M, login, M\+A\+X\+\_\+\+L\+O\+G\+I\+N\+\_\+\+L\+E\+N, N\+O\+\_\+\+E\+R\+R\+O\+R, and role.
+
+\hypertarget{classUser_adba4ac3eacf305b1dcfa7b82dc95817e}{}\index{User@{User}!get\+Login@{get\+Login}}
+\index{get\+Login@{get\+Login}!User@{User}}
+\subsubsection[{get\+Login}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ User\+::get\+Login (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\label{classUser_adba4ac3eacf305b1dcfa7b82dc95817e}
+
+
+ 
+
+Definition at line 58 of file user.\+cpp.
+
+
+
+References login.
+
+
+
+Referenced by A\+P\+I\+::add\+User().
+
+\hypertarget{classUser_a51db3d6d7dc0bdcc88e1e68acdd43dfd}{}\index{User@{User}!parse@{parse}}
+\index{parse@{parse}!User@{User}}
+\subsubsection[{parse}]{\setlength{\rightskip}{0pt plus 5cm}{\bf myerror\+\_\+t} User\+::parse (
+\begin{DoxyParamCaption}
+\item[{uint8\+\_\+t $\ast$}]{buffer, }
+\item[{{\bf User} $\ast$$\ast$}]{res}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classUser_a51db3d6d7dc0bdcc88e1e68acdd43dfd}
+This function is for example used to construct \hyperlink{classUser}{User} classes when loading the \hyperlink{classAPI}{A\+P\+I} from a file. 
+
+ 
+\begin{DoxyParams}{Parameters}
+{\em buffer} & is the byte array from which data will be read. \\
+\hline
+{\em res} & is a pointer to the \hyperlink{classUser}{User} pointer that will contain the result. $\ast$pointer should be initialised to N\+U\+L\+L since the memory allocation will be done by the function. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item \hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0abf350750d0d4fabd8954c0f1e9bbae94}{N\+O\+\_\+\+E\+R\+R\+O\+R} if no error occured 
+\item \hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0a05718b630d7176e8e040eca44907b99f}{E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+A\+M} if res is N\+U\+L\+L or $\ast$res is not N\+U\+L\+L 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+ 
+
+Definition at line 34 of file user.\+cpp.
+
+
+
+References E\+R\+R\+O\+R\+\_\+\+M\+E\+M, E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+A\+M, id, login, N\+O\+\_\+\+E\+R\+R\+O\+R, role, and User().
+
+
+
+Referenced by A\+P\+I\+::load\+A\+P\+I().
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classUser_a1d1e3a5d1dcc02ae1c36c3311e8c25b4}{}\index{User@{User}!login@{login}}
+\index{login@{login}!User@{User}}
+\subsubsection[{login}]{\setlength{\rightskip}{0pt plus 5cm}char User\+::login\mbox{[}{\bf M\+A\+X\+\_\+\+L\+O\+G\+I\+N\+\_\+\+L\+E\+N}+1\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}\label{classUser_a1d1e3a5d1dcc02ae1c36c3311e8c25b4}
+The size of a login is at most \hyperlink{user_8hpp_a43842dcd60d621d7d9c9b9e4ecd76f78}{M\+A\+X\+\_\+\+L\+O\+G\+I\+N\+\_\+\+L\+E\+N}. 
+
+Definition at line 89 of file user.\+hpp.
+
+
+
+Referenced by dump(), get\+Login(), parse(), and User().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/\hyperlink{user_8hpp}{user.\+hpp}\item 
+src/user.\+cpp\end{DoxyCompactItemize}

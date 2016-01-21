@@ -1,0 +1,325 @@
+\hypertarget{classAPI}{}\section{A\+P\+I Class Reference}
+\label{classAPI}\index{A\+P\+I@{A\+P\+I}}
+
+
+\hyperlink{classAPI}{A\+P\+I} class.  
+
+
+
+
+{\ttfamily \#include $<$api.\+hpp$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classAPI_ad2a474485b3635f22fe4f80a09370ed6}{A\+P\+I} (const char $\ast$\hyperlink{classAPI_aa4e36aeea94c8fae7fe0b2a2db58d06b}{filename})
+\begin{DoxyCompactList}\small\item\em The constructor initialises \hyperlink{classAPI}{A\+P\+I} from the file given in parameter. \end{DoxyCompactList}\item 
+\hyperlink{classAPI_a583ec65b542b44e4b7013f5fc830fdcd}{$\sim$\+A\+P\+I} ()
+\begin{DoxyCompactList}\small\item\em The \hyperlink{classAPI}{A\+P\+I} destructor. \end{DoxyCompactList}\item 
+void \hyperlink{classAPI_a1a705f7e87f72e3cd8c078f438fac948}{reset} ()
+\begin{DoxyCompactList}\small\item\em Resets the \hyperlink{classAPI}{A\+P\+I}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0}{myerror\+\_\+t} \hyperlink{classAPI_a08420a3662e1edf2d84275150a26a2d7}{add\+Object} (\hyperlink{classObject}{Object} $\ast$obj)
+\begin{DoxyCompactList}\small\item\em Add an object to the memory. \end{DoxyCompactList}\item 
+\hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0}{myerror\+\_\+t} \hyperlink{classAPI_ac9d164c3d0843702154ad43b7547e758}{add\+User} (const \hyperlink{classUser}{User} $\ast$user)
+\begin{DoxyCompactList}\small\item\em Register a new user. \end{DoxyCompactList}\item 
+\hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0}{myerror\+\_\+t} \hyperlink{classAPI_ae9bf448b00701609e20c2167931b8975}{save\+A\+P\+I} ()
+\begin{DoxyCompactList}\small\item\em This function stores the data into the file \hyperlink{classAPI_aa4e36aeea94c8fae7fe0b2a2db58d06b}{A\+P\+I\+::filename}. \end{DoxyCompactList}\item 
+\hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0}{myerror\+\_\+t} \hyperlink{classAPI_a015f9ca96d3f5ab8af44fe2fe8e0215a}{load\+A\+P\+I} ()
+\begin{DoxyCompactList}\small\item\em This function loads the protected data contained in the file \hyperlink{classAPI_aa4e36aeea94c8fae7fe0b2a2db58d06b}{A\+P\+I\+::filename}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{classAPI_a197a1a46641b76e5eb42daec3667d13e}{is\+Init}
+\begin{DoxyCompactList}\small\item\em Boolean variable set to true only once memory have been initialised by loading a file. \end{DoxyCompactList}\item 
+char \hyperlink{classAPI_aa4e36aeea94c8fae7fe0b2a2db58d06b}{filename} \mbox{[}100\mbox{]}
+\begin{DoxyCompactList}\small\item\em Variable containing the relative path and filename of the file from which the memory got initialised and where it should be saved on exit. \end{DoxyCompactList}\item 
+\hypertarget{classAPI_a139c766a1994eceebb8107246e84e6ce}{}std\+::vector$<$ const \hyperlink{classUser}{User} $\ast$ $>$ \hyperlink{classAPI_a139c766a1994eceebb8107246e84e6ce}{users}\label{classAPI_a139c766a1994eceebb8107246e84e6ce}
+
+\begin{DoxyCompactList}\small\item\em List of registered users. \end{DoxyCompactList}\item 
+\hypertarget{classAPI_a7ab6c1e81a7ef53b251271e345f81bec}{}std\+::vector$<$ \hyperlink{classObject}{Object} $\ast$ $>$ \hyperlink{classAPI_a7ab6c1e81a7ef53b251271e345f81bec}{memory}\label{classAPI_a7ab6c1e81a7ef53b251271e345f81bec}
+
+\begin{DoxyCompactList}\small\item\em Memory containing all objects that may be manipulated by the \hyperlink{classAPI}{A\+P\+I}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 17 of file api.\+hpp.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{classAPI_ad2a474485b3635f22fe4f80a09370ed6}{}\index{A\+P\+I@{A\+P\+I}!A\+P\+I@{A\+P\+I}}
+\index{A\+P\+I@{A\+P\+I}!A\+P\+I@{A\+P\+I}}
+\subsubsection[{A\+P\+I}]{\setlength{\rightskip}{0pt plus 5cm}A\+P\+I\+::\+A\+P\+I (
+\begin{DoxyParamCaption}
+\item[{const char $\ast$}]{filename}
+\end{DoxyParamCaption}
+)}\label{classAPI_ad2a474485b3635f22fe4f80a09370ed6}
+
+
+ 
+\begin{DoxyParams}{Parameters}
+{\em filename} & string containing the relative path and filename of the file containing the protected memory content to load.\\
+\hline
+\end{DoxyParams}
+
+
+ 
+\begin{DoxyEnumerate}
+\item Check that the file exists
+
+
+\item If yes copy filename to \hyperlink{classAPI_aa4e36aeea94c8fae7fe0b2a2db58d06b}{A\+P\+I\+::filename} and close the file
+
+
+\item Call \hyperlink{classAPI_a015f9ca96d3f5ab8af44fe2fe8e0215a}{A\+P\+I\+::load\+A\+P\+I()} to load data from the file
+
+
+\item Test return code and set \hyperlink{classAPI_a197a1a46641b76e5eb42daec3667d13e}{A\+P\+I\+::is\+Init} in case of success
+
+
+\end{DoxyEnumerate}
+
+Definition at line 7 of file api.\+cpp.
+
+
+
+References is\+Init, load\+A\+P\+I(), and N\+O\+\_\+\+E\+R\+R\+O\+R.
+
+\hypertarget{classAPI_a583ec65b542b44e4b7013f5fc830fdcd}{}\index{A\+P\+I@{A\+P\+I}!````~A\+P\+I@{$\sim$\+A\+P\+I}}
+\index{````~A\+P\+I@{$\sim$\+A\+P\+I}!A\+P\+I@{A\+P\+I}}
+\subsubsection[{$\sim$\+A\+P\+I}]{\setlength{\rightskip}{0pt plus 5cm}A\+P\+I\+::$\sim$\+A\+P\+I (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classAPI_a583ec65b542b44e4b7013f5fc830fdcd}
+Automatically dump current \hyperlink{classAPI}{A\+P\+I} memory to the file used for constructing the object. 
+
+ 
+\begin{DoxyEnumerate}
+\item Dump \hyperlink{classAPI}{A\+P\+I} to the file \hyperlink{classAPI_aa4e36aeea94c8fae7fe0b2a2db58d06b}{A\+P\+I\+::filename}
+
+
+\item Free all classes using \hyperlink{classAPI_a1a705f7e87f72e3cd8c078f438fac948}{reset()} function.
+
+
+\end{DoxyEnumerate}
+
+Definition at line 35 of file api.\+cpp.
+
+
+
+References reset(), and save\+A\+P\+I().
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classAPI_a08420a3662e1edf2d84275150a26a2d7}{}\index{A\+P\+I@{A\+P\+I}!add\+Object@{add\+Object}}
+\index{add\+Object@{add\+Object}!A\+P\+I@{A\+P\+I}}
+\subsubsection[{add\+Object}]{\setlength{\rightskip}{0pt plus 5cm}{\bf myerror\+\_\+t} A\+P\+I\+::add\+Object (
+\begin{DoxyParamCaption}
+\item[{{\bf Object} $\ast$}]{obj}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAPI_a08420a3662e1edf2d84275150a26a2d7}
+
+
+ 
+\begin{DoxyParams}{Parameters}
+{\em obj} & is a pointer to the \hyperlink{classObject}{Object} class that should be added to the memory. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+\hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0abf350750d0d4fabd8954c0f1e9bbae94}{N\+O\+\_\+\+E\+R\+R\+O\+R}
+\end{DoxyReturn}
+
+
+ 
+
+Definition at line 186 of file api.\+cpp.
+
+
+
+References memory, and N\+O\+\_\+\+E\+R\+R\+O\+R.
+
+\hypertarget{classAPI_ac9d164c3d0843702154ad43b7547e758}{}\index{A\+P\+I@{A\+P\+I}!add\+User@{add\+User}}
+\index{add\+User@{add\+User}!A\+P\+I@{A\+P\+I}}
+\subsubsection[{add\+User}]{\setlength{\rightskip}{0pt plus 5cm}{\bf myerror\+\_\+t} A\+P\+I\+::add\+User (
+\begin{DoxyParamCaption}
+\item[{const {\bf User} $\ast$}]{user}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAPI_ac9d164c3d0843702154ad43b7547e758}
+Add the user to the list of \hyperlink{classAPI}{A\+P\+I} users. 
+
+ 
+\begin{DoxyParams}{Parameters}
+{\em user} & is a pointer to the \hyperlink{classUser}{User} class that should be registered. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item \hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0abf350750d0d4fabd8954c0f1e9bbae94}{N\+O\+\_\+\+E\+R\+R\+O\+R} if no error occured 
+\item \hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0a05718b630d7176e8e040eca44907b99f}{E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+A\+M} if user is already in the base 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+ 
+
+Definition at line 192 of file api.\+cpp.
+
+
+
+References E\+R\+R\+O\+R\+\_\+\+P\+A\+R\+A\+M, User\+::get\+Login(), M\+A\+X\+\_\+\+L\+O\+G\+I\+N\+\_\+\+L\+E\+N, N\+O\+\_\+\+E\+R\+R\+O\+R, and users.
+
+\hypertarget{classAPI_a015f9ca96d3f5ab8af44fe2fe8e0215a}{}\index{A\+P\+I@{A\+P\+I}!load\+A\+P\+I@{load\+A\+P\+I}}
+\index{load\+A\+P\+I@{load\+A\+P\+I}!A\+P\+I@{A\+P\+I}}
+\subsubsection[{load\+A\+P\+I}]{\setlength{\rightskip}{0pt plus 5cm}{\bf myerror\+\_\+t} A\+P\+I\+::load\+A\+P\+I (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAPI_a015f9ca96d3f5ab8af44fe2fe8e0215a}
+
+
+ \begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item \hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0abf350750d0d4fabd8954c0f1e9bbae94}{N\+O\+\_\+\+E\+R\+R\+O\+R} if no error occured 
+\item \hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0a35d177e90088f78bdd0eede2ed9f2f6c}{E\+R\+R\+O\+R\+\_\+\+I\+O} if an error occured when reading the file 
+\item \hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0afa6ab537b9cb919464f60f53ade3f01d}{E\+R\+R\+O\+R\+\_\+\+F\+O\+R\+M\+A\+T} if an error occured when parsing the data 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+ 
+\begin{DoxyEnumerate}
+\item Opening the file
+
+
+\item Reading header
+
+
+\item Reading users
+
+
+\item Reading objects
+
+
+\item Closing the file
+
+
+\end{DoxyEnumerate}
+
+Definition at line 107 of file api.\+cpp.
+
+
+
+References User\+::dump\+Size, E\+R\+R\+O\+R\+\_\+\+I\+O, E\+R\+R\+O\+R\+\_\+\+M\+E\+M, filename, memory, N\+O\+\_\+\+E\+R\+R\+O\+R, User\+::parse(), Object\+::parse(), and users.
+
+
+
+Referenced by A\+P\+I().
+
+\hypertarget{classAPI_a1a705f7e87f72e3cd8c078f438fac948}{}\index{A\+P\+I@{A\+P\+I}!reset@{reset}}
+\index{reset@{reset}!A\+P\+I@{A\+P\+I}}
+\subsubsection[{reset}]{\setlength{\rightskip}{0pt plus 5cm}void A\+P\+I\+::reset (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\label{classAPI_a1a705f7e87f72e3cd8c078f438fac948}
+Resets the \hyperlink{classAPI}{A\+P\+I} by deleting users and memory. 
+
+ 
+
+Definition at line 45 of file api.\+cpp.
+
+
+
+References memory, and users.
+
+
+
+Referenced by $\sim$\+A\+P\+I().
+
+\hypertarget{classAPI_ae9bf448b00701609e20c2167931b8975}{}\index{A\+P\+I@{A\+P\+I}!save\+A\+P\+I@{save\+A\+P\+I}}
+\index{save\+A\+P\+I@{save\+A\+P\+I}!A\+P\+I@{A\+P\+I}}
+\subsubsection[{save\+A\+P\+I}]{\setlength{\rightskip}{0pt plus 5cm}{\bf myerror\+\_\+t} A\+P\+I\+::save\+A\+P\+I (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\label{classAPI_ae9bf448b00701609e20c2167931b8975}
+
+
+ \begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item \hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0abf350750d0d4fabd8954c0f1e9bbae94}{N\+O\+\_\+\+E\+R\+R\+O\+R} if no error occured 
+\item \hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0a35d177e90088f78bdd0eede2ed9f2f6c}{E\+R\+R\+O\+R\+\_\+\+I\+O} if an error occured when writing in the file 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+ 
+\begin{DoxyEnumerate}
+\item Opening the file
+
+
+\item Dumping the header
+
+
+\item Dumping users
+
+
+\item Dumping memory
+
+
+\item Close the file
+
+
+\end{DoxyEnumerate}
+
+Definition at line 52 of file api.\+cpp.
+
+
+
+References E\+R\+R\+O\+R\+\_\+\+I\+O, filename, memory, N\+O\+\_\+\+E\+R\+R\+O\+R, and users.
+
+
+
+Referenced by $\sim$\+A\+P\+I().
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classAPI_aa4e36aeea94c8fae7fe0b2a2db58d06b}{}\index{A\+P\+I@{A\+P\+I}!filename@{filename}}
+\index{filename@{filename}!A\+P\+I@{A\+P\+I}}
+\subsubsection[{filename}]{\setlength{\rightskip}{0pt plus 5cm}char A\+P\+I\+::filename\mbox{[}100\mbox{]}\hspace{0.3cm}{\ttfamily [private]}}\label{classAPI_aa4e36aeea94c8fae7fe0b2a2db58d06b}
+
+
+Definition at line 49 of file api.\+hpp.
+
+
+
+Referenced by load\+A\+P\+I(), and save\+A\+P\+I().
+
+\hypertarget{classAPI_a197a1a46641b76e5eb42daec3667d13e}{}\index{A\+P\+I@{A\+P\+I}!is\+Init@{is\+Init}}
+\index{is\+Init@{is\+Init}!A\+P\+I@{A\+P\+I}}
+\subsubsection[{is\+Init}]{\setlength{\rightskip}{0pt plus 5cm}bool A\+P\+I\+::is\+Init\hspace{0.3cm}{\ttfamily [private]}}\label{classAPI_a197a1a46641b76e5eb42daec3667d13e}
+
+
+Definition at line 45 of file api.\+hpp.
+
+
+
+Referenced by A\+P\+I().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/\hyperlink{api_8hpp}{api.\+hpp}\item 
+src/api.\+cpp\end{DoxyCompactItemize}

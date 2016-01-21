@@ -1,0 +1,336 @@
+\hypertarget{classAES}{}\section{A\+E\+S Class Reference}
+\label{classAES}\index{A\+E\+S@{A\+E\+S}}
+
+
+\hyperlink{classAES}{A\+E\+S} class.  
+
+
+
+
+{\ttfamily \#include $<$aes.\+hpp$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classAES_adb46cb1dbb14ff70f072d67913f65f38}{encrypt} (const uint8\+\_\+t key\mbox{[}16\mbox{]}, const uint8\+\_\+t plaintext\mbox{[}16\mbox{]}, uint8\+\_\+t ciphertext\mbox{[}16\mbox{]})
+\begin{DoxyCompactList}\small\item\em Function used to encrypt a plaintext into a ciphertext using \hyperlink{classAES}{A\+E\+S}. \end{DoxyCompactList}\item 
+static void \hyperlink{classAES_a81b2fbb6ef1422b54e4ca552a2cc36e4}{decrypt} (const uint8\+\_\+t key\mbox{[}16\mbox{]}, const uint8\+\_\+t ciphertext\mbox{[}16\mbox{]}, uint8\+\_\+t plaintext\mbox{[}16\mbox{]})
+\begin{DoxyCompactList}\small\item\em Function used to decrypt a ciphertext into a plaintext using \hyperlink{classAES}{A\+E\+S}. \end{DoxyCompactList}\item 
+static \hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0}{myerror\+\_\+t} \hyperlink{classAES_a71d8490b57b8c87624b34dc5900168e5}{test} ()
+\begin{DoxyCompactList}\small\item\em Auto test function to test \hyperlink{classAES}{A\+E\+S} implementation w.\+r. to few test vectors (from N\+I\+S\+T). \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{classAES_a5e97a2e938d742904ec586750f0d552b}{key\+Schedule} (const uint8\+\_\+t key\mbox{[}16\mbox{]}, uint32\+\_\+t subkeys\mbox{[}44\mbox{]})
+\begin{DoxyCompactList}\small\item\em A\+E\+S-\/128 key schedule function for encryption. \end{DoxyCompactList}\item 
+static void \hyperlink{classAES_acea7e3cbb7a3f72726be709079161818}{key\+Schedule\+\_\+inv} (const uint8\+\_\+t key\mbox{[}16\mbox{]}, uint32\+\_\+t subkeys\mbox{[}44\mbox{]})
+\begin{DoxyCompactList}\small\item\em A\+E\+S-\/128 key schedule function for decryption. \end{DoxyCompactList}\item 
+\hypertarget{classAES_ae358f41a16562f7084b748f08239ed22}{}static void \hyperlink{classAES_ae358f41a16562f7084b748f08239ed22}{round} (const uint32\+\_\+t subkey\mbox{[}4\mbox{]}, uint32\+\_\+t state\mbox{[}4\mbox{]})\label{classAES_ae358f41a16562f7084b748f08239ed22}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classAES}{A\+E\+S} round function based on big tables. \end{DoxyCompactList}\item 
+\hypertarget{classAES_a6ab65fb31bcd5585d9a52f92d0efe731}{}static void \hyperlink{classAES_a6ab65fb31bcd5585d9a52f92d0efe731}{round\+\_\+inv} (const uint32\+\_\+t subkey\mbox{[}4\mbox{]}, uint32\+\_\+t state\mbox{[}4\mbox{]})\label{classAES_a6ab65fb31bcd5585d9a52f92d0efe731}
+
+\begin{DoxyCompactList}\small\item\em \hyperlink{classAES}{A\+E\+S} inverse round function based on big tables. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{classAES_adbcbf38b7005ff6634ee812bcaa0ca0e}{}static const uint32\+\_\+t \hyperlink{classAES_adbcbf38b7005ff6634ee812bcaa0ca0e}{Te0} \mbox{[}256\mbox{]}\label{classAES_adbcbf38b7005ff6634ee812bcaa0ca0e}
+
+\begin{DoxyCompactList}\small\item\em Big table 0 for encryption\+: line 0. \end{DoxyCompactList}\item 
+\hypertarget{classAES_a20615b850cdc1e0e58d5340fca114ebe}{}static const uint32\+\_\+t \hyperlink{classAES_a20615b850cdc1e0e58d5340fca114ebe}{Te1} \mbox{[}256\mbox{]}\label{classAES_a20615b850cdc1e0e58d5340fca114ebe}
+
+\begin{DoxyCompactList}\small\item\em Big table 1 for encryption\+: line 1. \end{DoxyCompactList}\item 
+\hypertarget{classAES_a8b555815ada766628b9145508c74a4b5}{}static const uint32\+\_\+t \hyperlink{classAES_a8b555815ada766628b9145508c74a4b5}{Te2} \mbox{[}256\mbox{]}\label{classAES_a8b555815ada766628b9145508c74a4b5}
+
+\begin{DoxyCompactList}\small\item\em Big table 2 for encryption\+: line 2. \end{DoxyCompactList}\item 
+\hypertarget{classAES_ac1a86584b231b0130410afd19019fe29}{}static const uint32\+\_\+t \hyperlink{classAES_ac1a86584b231b0130410afd19019fe29}{Te3} \mbox{[}256\mbox{]}\label{classAES_ac1a86584b231b0130410afd19019fe29}
+
+\begin{DoxyCompactList}\small\item\em Big table 3 for encryption\+: line 3. \end{DoxyCompactList}\item 
+\hypertarget{classAES_ad31897dbad0abf9860df9b15a779d245}{}static const uint32\+\_\+t \hyperlink{classAES_ad31897dbad0abf9860df9b15a779d245}{Te4} \mbox{[}256\mbox{]}\label{classAES_ad31897dbad0abf9860df9b15a779d245}
+
+\begin{DoxyCompactList}\small\item\em Big table 4 for encryption\+: used in last round and key schedule. \end{DoxyCompactList}\item 
+\hypertarget{classAES_a8e09c19d389a95b9689c24be6f0fb3ae}{}static const uint32\+\_\+t \hyperlink{classAES_a8e09c19d389a95b9689c24be6f0fb3ae}{Td0} \mbox{[}256\mbox{]}\label{classAES_a8e09c19d389a95b9689c24be6f0fb3ae}
+
+\begin{DoxyCompactList}\small\item\em Big table 0 for decryption\+: line 0. \end{DoxyCompactList}\item 
+\hypertarget{classAES_aad13ea34f3cf92bc7f6d517ef8bbd216}{}static const uint32\+\_\+t \hyperlink{classAES_aad13ea34f3cf92bc7f6d517ef8bbd216}{Td1} \mbox{[}256\mbox{]}\label{classAES_aad13ea34f3cf92bc7f6d517ef8bbd216}
+
+\begin{DoxyCompactList}\small\item\em Big table 1 for decryption\+: line 1. \end{DoxyCompactList}\item 
+\hypertarget{classAES_af2213257dd362c06091daa5377b6cc3f}{}static const uint32\+\_\+t \hyperlink{classAES_af2213257dd362c06091daa5377b6cc3f}{Td2} \mbox{[}256\mbox{]}\label{classAES_af2213257dd362c06091daa5377b6cc3f}
+
+\begin{DoxyCompactList}\small\item\em Big table 2 for decryption\+: line 2. \end{DoxyCompactList}\item 
+\hypertarget{classAES_abbf0686f2ea9c74613777686c5014440}{}static const uint32\+\_\+t \hyperlink{classAES_abbf0686f2ea9c74613777686c5014440}{Td3} \mbox{[}256\mbox{]}\label{classAES_abbf0686f2ea9c74613777686c5014440}
+
+\begin{DoxyCompactList}\small\item\em Big table 3 for decryption\+: line 3. \end{DoxyCompactList}\item 
+\hypertarget{classAES_ab901a417097e09bd0d79f7644763cafd}{}static const uint32\+\_\+t \hyperlink{classAES_ab901a417097e09bd0d79f7644763cafd}{Td4} \mbox{[}256\mbox{]}\label{classAES_ab901a417097e09bd0d79f7644763cafd}
+
+\begin{DoxyCompactList}\small\item\em Big table 4 for decryption\+: used in last round and key schedule. \end{DoxyCompactList}\item 
+static const uint32\+\_\+t \hyperlink{classAES_a5f6082649a62bd52938c6b3b4c5a526f}{rcon} \mbox{[}10\mbox{]}
+\begin{DoxyCompactList}\small\item\em Round constants for key schedule. \end{DoxyCompactList}\item 
+static const uint8\+\_\+t \hyperlink{classAES_af860c29be27726f8ad48a420c5724692}{T\+V\+\_\+keys} \mbox{[}2\mbox{]}\mbox{[}16\mbox{]}
+\begin{DoxyCompactList}\small\item\em Keys used in test vectors. \end{DoxyCompactList}\item 
+static const uint8\+\_\+t \hyperlink{classAES_a9e58e7326fc7597ebed6185191015378}{T\+V\+\_\+plaintexts} \mbox{[}2\mbox{]}\mbox{[}16\mbox{]}
+\begin{DoxyCompactList}\small\item\em Plaintexts used in test vectors. \end{DoxyCompactList}\item 
+static const uint8\+\_\+t \hyperlink{classAES_aaa75b4b36597677f162e2752d6c2b407}{T\+V\+\_\+ciphertexts} \mbox{[}2\mbox{]}\mbox{[}16\mbox{]}
+\begin{DoxyCompactList}\small\item\em Ciphertexts used in test vectors. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 14 of file aes.\+hpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{classAES_a81b2fbb6ef1422b54e4ca552a2cc36e4}{}\index{A\+E\+S@{A\+E\+S}!decrypt@{decrypt}}
+\index{decrypt@{decrypt}!A\+E\+S@{A\+E\+S}}
+\subsubsection[{decrypt}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::decrypt (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t}]{key\mbox{[}16\mbox{]}, }
+\item[{const uint8\+\_\+t}]{ciphertext\mbox{[}16\mbox{]}, }
+\item[{uint8\+\_\+t}]{plaintext\mbox{[}16\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classAES_a81b2fbb6ef1422b54e4ca552a2cc36e4}
+This function decrypts the provided ciphertext using the given key in A\+E\+S-\/128. 
+
+ 
+\begin{DoxyParams}{Parameters}
+{\em key} & is a 16-\/byte long array containing the key. \\
+\hline
+{\em ciphertext} & is a 16-\/byte long array containing the ciphertext to decrypt. \\
+\hline
+{\em plaintext} & is a pointer to a 16-\/byte long array that will contain the decrypted message.\\
+\hline
+\end{DoxyParams}
+
+
+ Key Schedule call
+
+Conversion of plaintext from bytes to 32-\/bit words
+
+Last key xor
+
+9 plain rounds
+
+Partial round
+
+First add\+Round\+Key
+
+Conversion of state from 32-\/bit words to bytes 
+
+Definition at line 90 of file aes.\+cpp.
+
+
+
+References key\+Schedule\+\_\+inv(), round(), round\+\_\+inv(), and Td4.
+
+
+
+Referenced by test().
+
+\hypertarget{classAES_adb46cb1dbb14ff70f072d67913f65f38}{}\index{A\+E\+S@{A\+E\+S}!encrypt@{encrypt}}
+\index{encrypt@{encrypt}!A\+E\+S@{A\+E\+S}}
+\subsubsection[{encrypt}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::encrypt (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t}]{key\mbox{[}16\mbox{]}, }
+\item[{const uint8\+\_\+t}]{plaintext\mbox{[}16\mbox{]}, }
+\item[{uint8\+\_\+t}]{ciphertext\mbox{[}16\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classAES_adb46cb1dbb14ff70f072d67913f65f38}
+This function encrypts the provided plaintext using the given key in A\+E\+S-\/128. 
+
+ 
+\begin{DoxyParams}{Parameters}
+{\em key} & is a 16-\/byte long array containing the key. \\
+\hline
+{\em plaintext} & is a 16-\/byte long array containing the plaintext to encrypt. \\
+\hline
+{\em ciphertext} & is a pointer to a 16-\/byte long array that will contain the encrypted message.\\
+\hline
+\end{DoxyParams}
+
+
+ Key Schedule call
+
+Conversion of plaintext from bytes to 32-\/bit words
+
+First add\+Round\+Key
+
+9 plain rounds
+
+Last round
+
+Conversion of state from 32-\/bit words to bytes 
+
+Definition at line 41 of file aes.\+cpp.
+
+
+
+References key\+Schedule(), round(), and Te4.
+
+
+
+Referenced by test().
+
+\hypertarget{classAES_a5e97a2e938d742904ec586750f0d552b}{}\index{A\+E\+S@{A\+E\+S}!key\+Schedule@{key\+Schedule}}
+\index{key\+Schedule@{key\+Schedule}!A\+E\+S@{A\+E\+S}}
+\subsubsection[{key\+Schedule}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::key\+Schedule (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t}]{key\mbox{[}16\mbox{]}, }
+\item[{uint32\+\_\+t}]{subkeys\mbox{[}44\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classAES_a5e97a2e938d742904ec586750f0d552b}
+Conversion from bytes to 32-\/bit words
+
+Key schedule 
+
+Definition at line 175 of file aes.\+cpp.
+
+
+
+References rcon, and Te4.
+
+
+
+Referenced by encrypt(), and key\+Schedule\+\_\+inv().
+
+\hypertarget{classAES_acea7e3cbb7a3f72726be709079161818}{}\index{A\+E\+S@{A\+E\+S}!key\+Schedule\+\_\+inv@{key\+Schedule\+\_\+inv}}
+\index{key\+Schedule\+\_\+inv@{key\+Schedule\+\_\+inv}!A\+E\+S@{A\+E\+S}}
+\subsubsection[{key\+Schedule\+\_\+inv}]{\setlength{\rightskip}{0pt plus 5cm}void A\+E\+S\+::key\+Schedule\+\_\+inv (
+\begin{DoxyParamCaption}
+\item[{const uint8\+\_\+t}]{key\mbox{[}16\mbox{]}, }
+\item[{uint32\+\_\+t}]{subkeys\mbox{[}44\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classAES_acea7e3cbb7a3f72726be709079161818}
+Expand keys
+
+Invert order
+
+Apply inverse Mix\+Column 
+
+Definition at line 208 of file aes.\+cpp.
+
+
+
+References key\+Schedule(), Td0, Td1, Td2, Td3, and Te4.
+
+
+
+Referenced by decrypt().
+
+\hypertarget{classAES_a71d8490b57b8c87624b34dc5900168e5}{}\index{A\+E\+S@{A\+E\+S}!test@{test}}
+\index{test@{test}!A\+E\+S@{A\+E\+S}}
+\subsubsection[{test}]{\setlength{\rightskip}{0pt plus 5cm}{\bf myerror\+\_\+t} A\+E\+S\+::test (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [static]}}\label{classAES_a71d8490b57b8c87624b34dc5900168e5}
+This function uses test vectors defined in the class and test implementation versus them. 
+
+ \begin{DoxyReturn}{Returns}
+
+\begin{DoxyItemize}
+\item \hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0a72d7027f95e0f2811e3ff04fa7e42392}{E\+R\+R\+O\+R\+\_\+\+U\+N\+E\+X\+P\+E\+C\+T\+E\+D} if a mismatch is found 
+\item \hyperlink{error_8hpp_acabd2917084445509becf54ab64a4bd0abf350750d0d4fabd8954c0f1e9bbae94}{N\+O\+\_\+\+E\+R\+R\+O\+R} if everything matches 
+\end{DoxyItemize}
+\end{DoxyReturn}
+
+
+ Testing encryption
+
+Testing decryption 
+
+Definition at line 5 of file aes.\+cpp.
+
+
+
+References decrypt(), encrypt(), E\+R\+R\+O\+R\+\_\+\+U\+N\+E\+X\+P\+E\+C\+T\+E\+D, N\+O\+\_\+\+E\+R\+R\+O\+R, T\+V\+\_\+ciphertexts, T\+V\+\_\+keys, and T\+V\+\_\+plaintexts.
+
+
+
+\subsection{Field Documentation}
+\hypertarget{classAES_a5f6082649a62bd52938c6b3b4c5a526f}{}\index{A\+E\+S@{A\+E\+S}!rcon@{rcon}}
+\index{rcon@{rcon}!A\+E\+S@{A\+E\+S}}
+\subsubsection[{rcon}]{\setlength{\rightskip}{0pt plus 5cm}const uint32\+\_\+t A\+E\+S\+::rcon\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classAES_a5f6082649a62bd52938c6b3b4c5a526f}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+    0x01000000, 0x02000000, 0x04000000, 0x08000000,
+    0x10000000, 0x20000000, 0x40000000, 0x80000000,
+    0x1B000000, 0x36000000, 
+\}
+\end{DoxyCode}
+
+
+Definition at line 87 of file aes.\+hpp.
+
+
+
+Referenced by key\+Schedule().
+
+\hypertarget{classAES_aaa75b4b36597677f162e2752d6c2b407}{}\index{A\+E\+S@{A\+E\+S}!T\+V\+\_\+ciphertexts@{T\+V\+\_\+ciphertexts}}
+\index{T\+V\+\_\+ciphertexts@{T\+V\+\_\+ciphertexts}!A\+E\+S@{A\+E\+S}}
+\subsubsection[{T\+V\+\_\+ciphertexts}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t A\+E\+S\+::\+T\+V\+\_\+ciphertexts\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classAES_aaa75b4b36597677f162e2752d6c2b407}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  \{0x3a,0xd7,0x7b,0xb4,0x0d,0x7a,0x36,0x60,
+   0xa8,0x9e,0xca,0xf3,0x24,0x66,0xef,0x97\},
+  \{0xf5,0xd3,0xd5,0x85,0x03,0xb9,0x69,0x9d,
+   0xe7,0x85,0x89,0x5a,0x96,0xfd,0xba,0xaf\}
+\}
+\end{DoxyCode}
+
+
+Definition at line 95 of file aes.\+hpp.
+
+
+
+Referenced by test().
+
+\hypertarget{classAES_af860c29be27726f8ad48a420c5724692}{}\index{A\+E\+S@{A\+E\+S}!T\+V\+\_\+keys@{T\+V\+\_\+keys}}
+\index{T\+V\+\_\+keys@{T\+V\+\_\+keys}!A\+E\+S@{A\+E\+S}}
+\subsubsection[{T\+V\+\_\+keys}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t A\+E\+S\+::\+T\+V\+\_\+keys\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classAES_af860c29be27726f8ad48a420c5724692}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  \{0x2b,0x7e,0x15,0x16,0x28,0xae,0xd2,0xa6,
+   0xab,0xf7,0x15,0x88,0x09,0xcf,0x4f,0x3c\},
+  \{0x2b,0x7e,0x15,0x16,0x28,0xae,0xd2,0xa6,
+   0xab,0xf7,0x15,0x88,0x09,0xcf,0x4f,0x3c\}
+\}
+\end{DoxyCode}
+
+
+Definition at line 91 of file aes.\+hpp.
+
+
+
+Referenced by test().
+
+\hypertarget{classAES_a9e58e7326fc7597ebed6185191015378}{}\index{A\+E\+S@{A\+E\+S}!T\+V\+\_\+plaintexts@{T\+V\+\_\+plaintexts}}
+\index{T\+V\+\_\+plaintexts@{T\+V\+\_\+plaintexts}!A\+E\+S@{A\+E\+S}}
+\subsubsection[{T\+V\+\_\+plaintexts}]{\setlength{\rightskip}{0pt plus 5cm}const uint8\+\_\+t A\+E\+S\+::\+T\+V\+\_\+plaintexts\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [private]}}\label{classAES_a9e58e7326fc7597ebed6185191015378}
+{\bfseries Initial value\+:}
+\begin{DoxyCode}
+= \{
+  \{0x6b,0xc1,0xbe,0xe2,0x2e,0x40,0x9f,0x96,
+   0xe9,0x3d,0x7e,0x11,0x73,0x93,0x17,0x2a\},
+  \{0xae,0x2d,0x8a,0x57,0x1e,0x03,0xac,0x9c,
+   0x9e,0xb7,0x6f,0xac,0x45,0xaf,0x8e,0x51\}
+\}
+\end{DoxyCode}
+
+
+Definition at line 93 of file aes.\+hpp.
+
+
+
+Referenced by test().
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+includes/\hyperlink{aes_8hpp}{aes.\+hpp}\item 
+src/aes.\+cpp\end{DoxyCompactItemize}

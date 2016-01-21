@@ -2,12 +2,32 @@
 #include "aes.hpp"
 #include <cstdio>
 
+void print_16char_as_hex(const uint8_t in[16]) {
+  for (int i = 0; i < 16; i++) {
+    printf("%02x", in[i]);
+  }
+  printf("\n");
+}
+
 int main()
 {
+  uint8_t * clef;
+  uint8_t plain[16];
+  uint8_t cipher[16];
+
+  clef = (uint8_t*) malloc(16);
   API api("data/default.api");
   api.init();
   printf("----login(\"admin\") ----\n");
   api.login("admin");
+  api.newKey(clef);
+  printf("Veuillez entrer la donnée à crypter :\n");
+  scanf("%16s",plain);
+  printf("----chiffrement en cours ----\n");
+  print_16char_as_hex(plain);
+  api.encryptData(plain,cipher,clef);
+  printf("----chiffrement terminé ----\n");
+  print_16char_as_hex(cipher);
 
   /* 
  *** TP : PREMIERE PARTIE ***
@@ -46,6 +66,6 @@ int main()
       2. Le second point de cette partie (si le temps le permet) consiste à utiliser la primitive de chiffrement disponible afin de commencer à mettre en place un petit peu de sécurité locale. Étant données la durée du TP, on essaiera juste de protéger en confidentialité les clefs des utilisateurs en chiffrant/déchiffrant leur valeur à l'aide d'une clef dérivée, au moins, du mot de passe utilisateur.
 
   */
-  
+  free(clef);
   return 0;
 }

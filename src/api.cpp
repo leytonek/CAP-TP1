@@ -1,5 +1,6 @@
 #include "api.hpp"
 #include "object.hpp"
+#include "aes.hpp"
 
 #include <cstdio>
 #include <cstring>
@@ -282,4 +283,39 @@ const User* API::findUserByLogin(const char login[MAX_LOGIN_LEN])
 
 bool API::verifMDP(User user, char mdp[MAX_MDP_LEN]){
   return true;
+}
+
+myerror_t API::newKey(uint8_t* myKey)
+{
+  myerror_t ret = NO_ERROR;
+  printf("Génération de la clef\n");
+  for (int i = 0; i < 16; ++i)
+  {
+    *(myKey+i) = (uint8_t) i;
+    printf("%2x",*(myKey+i));
+  }
+  printf("\nClef générée\n");
+  return ret;
+}
+
+myerror_t API::encryptData(const uint8_t plain[], uint8_t cipher[], const uint8_t key[16])
+{
+    myerror_t ret = NO_ERROR;
+    uint8_t ptmp[16];
+    uint8_t ctmp[16];
+    bool done = false;
+    int i = 0;
+    int j = 0;
+    while (!done) {
+      for (i = 0; i < 16; i++) {
+        if (!plain[i+(16*j)]) {done = true; break;}
+        else {ptmp[i] = plain[i+(j*16)];}
+      }
+      AES::encrypt(key, ptmp, ctmp);
+      for (i = 0; i < 16; i++) {
+        cipher[i+(j*16)] = ctmp[i];
+      }
+      j++;
+    }
+    return ret;
 }

@@ -42,6 +42,9 @@ public:
   myerror_t init();
 
   myerror_t login(const char login[MAX_LOGIN_LEN]);
+  myerror_t newKey(uint8_t* myKey);
+  myerror_t encryptData(const uint8_t plain[], uint8_t cipher[], const uint8_t key[16]);
+
 private:
   /** \brief Boolean variable set to true only once memory have been initialised by loading a file. 
    *

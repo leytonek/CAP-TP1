@@ -1,5 +1,5 @@
 CC	:= g++
-CFLAGS	:= -O3 -std=c++0x
+CFLAGS	:= -Wall -std=c++0x
 IFLAGS	:= -I./includes
 
 obj/%.o: src/%.cpp includes/*.hpp

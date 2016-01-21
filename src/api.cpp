@@ -4,6 +4,8 @@
 
 #include <cstdio>
 #include <cstring>
+#include <string>
+#include <iostream>
 
 API::API(const char* filename)
 {
@@ -258,9 +260,10 @@ myerror_t API::login(const char login[MAX_LOGIN_LEN])
   const User* user = findUserByLogin(login);
   if(user == NULL){ret=ERROR_PARAM; return ret;}
 
-  char mdp[MAX_MDP_LEN];
+  std::string mdp;
   printf("Veuillez entrer le mot de passe :\n");
-  scanf("%29s",mdp);
+  //scanf("%29s",mdp);
+  getline(std::cin, mdp);
 
   if(!verifMDP(*user,mdp)){ret=ERROR_SEC; return ret;}
   logged = user;
@@ -281,18 +284,18 @@ const User* API::findUserByLogin(const char login[MAX_LOGIN_LEN])
   return NULL;
 }
 
-bool API::verifMDP(User user, char mdp[MAX_MDP_LEN]){
+bool API::verifMDP(User user, std::string mdp){
   return true;
 }
 
-myerror_t API::newKey(uint8_t* myKey)
+myerror_t API::newKey(uint8_t myKey[16])
 {
   myerror_t ret = NO_ERROR;
   printf("Génération de la clef\n");
   for (int i = 0; i < 16; ++i)
   {
-    *(myKey+i) = (uint8_t) i;
-    printf("%2x",*(myKey+i));
+    myKey[i] = (uint8_t) i;
+    printf("%2x",myKey[i]);
   }
   printf("\nClef générée\n");
   return ret;

@@ -8,6 +8,7 @@
 #define API_HPP_
 
 #include <vector>
+#include <string>
 
 #include "error.hpp"
 #include "object.hpp"
@@ -42,7 +43,7 @@ public:
   myerror_t init();
 
   myerror_t login(const char login[MAX_LOGIN_LEN]);
-  myerror_t newKey(uint8_t* myKey);
+  myerror_t newKey(uint8_t myKey[16]);
   myerror_t encryptData(const uint8_t plain[], uint8_t cipher[], const uint8_t key[16]);
 
 private:
@@ -119,7 +120,7 @@ myerror_t addObject(Object *obj);
 
   const User* findUserByLogin(const char login[MAX_LOGIN_LEN]);
 
-  bool verifMDP(User user, char mdp[MAX_MDP_LEN]);
+  bool verifMDP(User user, std::string mdp);
 };
 
 #endif

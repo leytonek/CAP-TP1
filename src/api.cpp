@@ -241,6 +241,7 @@ myerror_t API::init()
 {
   myerror_t ret = NO_ERROR;
   printf("---- Initialisation ----\n");
+  if(logged != NULL){logged = NULL; printf("---- Déconnection du compte connecté ----\n");}
   printf("---- createAdmin(\"admin\") ----\n");
   createAdmin("admin");
   return ret;
